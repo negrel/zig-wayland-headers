@@ -4,7 +4,7 @@ set -x
 
 LIBDECOR_REV=7807ae3480f5c6a37c5e8505d94af1e764aaf704
 WAYLAND_REV=edb943dc6464697ba13d7df277aef277721764b7
-WAYLAND_PROTOCOLS_REV=e1d61ce9402ebd996d758c43f167e6280c1a3568
+WAYLAND_PROTOCOLS_REV=20bcf732a9a173ae7d437882159fb7ababb4713e
 
 # `git clone --depth 1` but at a specific revision
 git_clone_rev() {
@@ -66,6 +66,8 @@ generate_glfw _wayland-protocols/stable/viewporter/viewporter.xml viewporter
 generate_glfw _wayland-protocols/unstable/relative-pointer/relative-pointer-unstable-v1.xml relative-pointer-unstable-v1
 generate_glfw _wayland-protocols/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml pointer-constraints-unstable-v1
 generate_glfw _wayland-protocols/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml idle-inhibit-unstable-v1
+generate_glfw _wayland-protocols/staging/xdg-activation/xdg-activation-v1.xml xdg-activation-v1
+generate_glfw _wayland-protocols/staging/fractional-scale/fractional-scale-v1.xml fractional-scale-v1
 
 # for the main protocol the header has already been generated, so we only need the code
 wayland-scanner private-code _wayland/protocol/wayland.xml wayland-protocols/wayland-client-protocol-code.h
